@@ -30470,6 +30470,8 @@ paths:
       tags:
         - Query
 definitions:
+  cns.registry.MsgRegisterRecordResponse:
+    type: object
   cns.registry.Params:
     type: object
     description: Params defines the parameters for the module.
