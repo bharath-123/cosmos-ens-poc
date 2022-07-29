@@ -123,28 +123,338 @@ func (m *MsgRegisterRecordResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgRegisterRecordResponse proto.InternalMessageInfo
 
+type MsgCreateRecordmap struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index   string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+	Chain   string `protobuf:"bytes,3,opt,name=chain,proto3" json:"chain,omitempty"`
+	Address string `protobuf:"bytes,4,opt,name=address,proto3" json:"address,omitempty"`
+}
+
+func (m *MsgCreateRecordmap) Reset()         { *m = MsgCreateRecordmap{} }
+func (m *MsgCreateRecordmap) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateRecordmap) ProtoMessage()    {}
+func (*MsgCreateRecordmap) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{2}
+}
+func (m *MsgCreateRecordmap) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateRecordmap) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateRecordmap.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateRecordmap) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateRecordmap.Merge(m, src)
+}
+func (m *MsgCreateRecordmap) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateRecordmap) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateRecordmap.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateRecordmap proto.InternalMessageInfo
+
+func (m *MsgCreateRecordmap) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgCreateRecordmap) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+func (m *MsgCreateRecordmap) GetChain() string {
+	if m != nil {
+		return m.Chain
+	}
+	return ""
+}
+
+func (m *MsgCreateRecordmap) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type MsgCreateRecordmapResponse struct {
+}
+
+func (m *MsgCreateRecordmapResponse) Reset()         { *m = MsgCreateRecordmapResponse{} }
+func (m *MsgCreateRecordmapResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateRecordmapResponse) ProtoMessage()    {}
+func (*MsgCreateRecordmapResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{3}
+}
+func (m *MsgCreateRecordmapResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateRecordmapResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateRecordmapResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateRecordmapResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateRecordmapResponse.Merge(m, src)
+}
+func (m *MsgCreateRecordmapResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateRecordmapResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateRecordmapResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateRecordmapResponse proto.InternalMessageInfo
+
+type MsgUpdateRecordmap struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index   string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+	Chain   string `protobuf:"bytes,3,opt,name=chain,proto3" json:"chain,omitempty"`
+	Address string `protobuf:"bytes,4,opt,name=address,proto3" json:"address,omitempty"`
+}
+
+func (m *MsgUpdateRecordmap) Reset()         { *m = MsgUpdateRecordmap{} }
+func (m *MsgUpdateRecordmap) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateRecordmap) ProtoMessage()    {}
+func (*MsgUpdateRecordmap) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{4}
+}
+func (m *MsgUpdateRecordmap) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateRecordmap) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateRecordmap.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateRecordmap) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateRecordmap.Merge(m, src)
+}
+func (m *MsgUpdateRecordmap) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateRecordmap) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateRecordmap.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateRecordmap proto.InternalMessageInfo
+
+func (m *MsgUpdateRecordmap) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateRecordmap) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+func (m *MsgUpdateRecordmap) GetChain() string {
+	if m != nil {
+		return m.Chain
+	}
+	return ""
+}
+
+func (m *MsgUpdateRecordmap) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type MsgUpdateRecordmapResponse struct {
+}
+
+func (m *MsgUpdateRecordmapResponse) Reset()         { *m = MsgUpdateRecordmapResponse{} }
+func (m *MsgUpdateRecordmapResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateRecordmapResponse) ProtoMessage()    {}
+func (*MsgUpdateRecordmapResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{5}
+}
+func (m *MsgUpdateRecordmapResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateRecordmapResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateRecordmapResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateRecordmapResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateRecordmapResponse.Merge(m, src)
+}
+func (m *MsgUpdateRecordmapResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateRecordmapResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateRecordmapResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateRecordmapResponse proto.InternalMessageInfo
+
+type MsgDeleteRecordmap struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index   string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+}
+
+func (m *MsgDeleteRecordmap) Reset()         { *m = MsgDeleteRecordmap{} }
+func (m *MsgDeleteRecordmap) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteRecordmap) ProtoMessage()    {}
+func (*MsgDeleteRecordmap) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{6}
+}
+func (m *MsgDeleteRecordmap) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteRecordmap) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteRecordmap.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteRecordmap) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteRecordmap.Merge(m, src)
+}
+func (m *MsgDeleteRecordmap) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteRecordmap) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteRecordmap.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteRecordmap proto.InternalMessageInfo
+
+func (m *MsgDeleteRecordmap) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgDeleteRecordmap) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+type MsgDeleteRecordmapResponse struct {
+}
+
+func (m *MsgDeleteRecordmapResponse) Reset()         { *m = MsgDeleteRecordmapResponse{} }
+func (m *MsgDeleteRecordmapResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteRecordmapResponse) ProtoMessage()    {}
+func (*MsgDeleteRecordmapResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33996d822bb1b5d4, []int{7}
+}
+func (m *MsgDeleteRecordmapResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteRecordmapResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteRecordmapResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteRecordmapResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteRecordmapResponse.Merge(m, src)
+}
+func (m *MsgDeleteRecordmapResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteRecordmapResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteRecordmapResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteRecordmapResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgRegisterRecord)(nil), "cns.registry.MsgRegisterRecord")
 	proto.RegisterType((*MsgRegisterRecordResponse)(nil), "cns.registry.MsgRegisterRecordResponse")
+	proto.RegisterType((*MsgCreateRecordmap)(nil), "cns.registry.MsgCreateRecordmap")
+	proto.RegisterType((*MsgCreateRecordmapResponse)(nil), "cns.registry.MsgCreateRecordmapResponse")
+	proto.RegisterType((*MsgUpdateRecordmap)(nil), "cns.registry.MsgUpdateRecordmap")
+	proto.RegisterType((*MsgUpdateRecordmapResponse)(nil), "cns.registry.MsgUpdateRecordmapResponse")
+	proto.RegisterType((*MsgDeleteRecordmap)(nil), "cns.registry.MsgDeleteRecordmap")
+	proto.RegisterType((*MsgDeleteRecordmapResponse)(nil), "cns.registry.MsgDeleteRecordmapResponse")
 }
 
 func init() { proto.RegisterFile("registry/tx.proto", fileDescriptor_33996d822bb1b5d4) }
 
 var fileDescriptor_33996d822bb1b5d4 = []byte{
-	// 207 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2c, 0x4a, 0x4d, 0xcf,
-	0x2c, 0x2e, 0x29, 0xaa, 0xd4, 0x2f, 0xa9, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x49,
-	0xce, 0x2b, 0xd6, 0x83, 0x09, 0x2b, 0xc5, 0x72, 0x09, 0xfa, 0x16, 0xa7, 0x07, 0x81, 0xb9, 0xa9,
-	0x45, 0x41, 0xa9, 0xc9, 0xf9, 0x45, 0x29, 0x42, 0x12, 0x5c, 0xec, 0xc9, 0x45, 0xa9, 0x89, 0x25,
-	0xf9, 0x45, 0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x41, 0x30, 0xae, 0x90, 0x08, 0x17, 0x6b, 0x72,
-	0x46, 0x62, 0x66, 0x9e, 0x04, 0x13, 0x58, 0x1c, 0xc2, 0x01, 0xa9, 0x4f, 0x4c, 0x49, 0x29, 0x4a,
-	0x2d, 0x2e, 0x96, 0x60, 0x86, 0xa8, 0x87, 0x72, 0x95, 0xa4, 0xb9, 0x24, 0x31, 0x8c, 0x0f, 0x4a,
-	0x2d, 0x2e, 0xc8, 0xcf, 0x2b, 0x4e, 0x35, 0x4a, 0xe4, 0x62, 0xf6, 0x2d, 0x4e, 0x17, 0x8a, 0xe2,
-	0xe2, 0x43, 0xb3, 0x5f, 0x5e, 0x0f, 0xd9, 0x8d, 0x7a, 0x18, 0x26, 0x48, 0xa9, 0x13, 0x50, 0x00,
-	0xb3, 0xc2, 0x49, 0xef, 0xc4, 0x23, 0x39, 0xc6, 0x0b, 0x8f, 0xe4, 0x18, 0x1f, 0x3c, 0x92, 0x63,
-	0x9c, 0xf0, 0x58, 0x8e, 0xe1, 0xc2, 0x63, 0x39, 0x86, 0x1b, 0x8f, 0xe5, 0x18, 0xa2, 0x44, 0x92,
-	0xf3, 0x8a, 0xf5, 0x2b, 0xf4, 0x11, 0xe1, 0x53, 0x59, 0x90, 0x5a, 0x9c, 0xc4, 0x06, 0x0e, 0x23,
-	0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0xba, 0xd1, 0x65, 0xa5, 0x38, 0x01, 0x00, 0x00,
+	// 332 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x93, 0xbd, 0x4e, 0xc3, 0x30,
+	0x14, 0x85, 0x9b, 0x96, 0x1f, 0x61, 0x21, 0x50, 0xad, 0x0e, 0x21, 0x20, 0x53, 0x65, 0xa1, 0x53,
+	0x22, 0xc1, 0x1b, 0x40, 0xd7, 0x2c, 0x91, 0x58, 0x2a, 0x75, 0x08, 0xc9, 0x55, 0x88, 0x04, 0x49,
+	0xe4, 0x9b, 0x21, 0x7d, 0x0b, 0x1e, 0x8b, 0xb1, 0x23, 0x23, 0x4a, 0xde, 0x03, 0xa1, 0x38, 0x75,
+	0x5b, 0xec, 0x86, 0x0e, 0x0c, 0x8c, 0xd7, 0x3e, 0x3e, 0xe7, 0x93, 0x8e, 0x2f, 0x19, 0x72, 0x88,
+	0x13, 0x2c, 0xf8, 0xc2, 0x2d, 0x4a, 0x27, 0xe7, 0x59, 0x91, 0xd1, 0xd3, 0x30, 0x45, 0x47, 0x1e,
+	0x5b, 0xe6, 0x5a, 0xc0, 0x21, 0xcc, 0x78, 0xf4, 0x1a, 0xe4, 0xad, 0xce, 0x9e, 0x93, 0xa1, 0x87,
+	0xb1, 0x2f, 0xae, 0x81, 0xfb, 0xe2, 0x96, 0x9a, 0xe4, 0x38, 0xe4, 0x10, 0x14, 0x19, 0x37, 0x8d,
+	0xb1, 0x31, 0x39, 0xf1, 0xe5, 0x48, 0x47, 0xe4, 0x30, 0x7c, 0x0e, 0x92, 0xd4, 0xec, 0x8b, 0xf3,
+	0x76, 0x68, 0xf4, 0x41, 0x14, 0x71, 0x40, 0x34, 0x07, 0xad, 0x7e, 0x35, 0xda, 0x97, 0xe4, 0x42,
+	0xb3, 0xf7, 0x01, 0xf3, 0x2c, 0x45, 0xb0, 0x0b, 0x42, 0x3d, 0x8c, 0x1f, 0x1a, 0x6b, 0xf0, 0x25,
+	0xd7, 0xef, 0xe1, 0x49, 0x1a, 0x41, 0x29, 0xc3, 0xc5, 0xb0, 0x41, 0x1a, 0x74, 0x20, 0x1d, 0xfc,
+	0x44, 0xba, 0x22, 0x96, 0x9e, 0xaa, 0x30, 0x3d, 0xe6, 0xd1, 0x3f, 0x30, 0x29, 0xa9, 0x6b, 0xa6,
+	0xa9, 0x60, 0x9a, 0xc2, 0x0b, 0xfc, 0x81, 0x69, 0x95, 0xa1, 0xb8, 0xc8, 0x8c, 0xdb, 0xaf, 0x3e,
+	0x19, 0x78, 0x18, 0xd3, 0x19, 0x39, 0x53, 0x3e, 0xc3, 0xb5, 0xb3, 0xfd, 0x95, 0x1c, 0xad, 0x4e,
+	0xeb, 0x66, 0x8f, 0x40, 0x66, 0xd0, 0x39, 0x39, 0x57, 0xcb, 0x1e, 0x6b, 0x6f, 0x15, 0x85, 0x35,
+	0xd9, 0xa7, 0xd8, 0xb6, 0x57, 0x7b, 0xd3, 0xed, 0x15, 0xc5, 0x0e, 0xfb, 0x8e, 0x16, 0x1a, 0x7b,
+	0xb5, 0x02, 0xdd, 0x5e, 0x51, 0xec, 0xb0, 0xef, 0x28, 0xe0, 0xde, 0x79, 0xaf, 0x98, 0xb1, 0xac,
+	0x98, 0xf1, 0x59, 0x31, 0xe3, 0xad, 0x66, 0xbd, 0x65, 0xcd, 0x7a, 0x1f, 0x35, 0xeb, 0xcd, 0x46,
+	0x61, 0x8a, 0x6e, 0xe9, 0x6e, 0x76, 0x7c, 0x91, 0x03, 0x3e, 0x1d, 0x89, 0xfd, 0xbd, 0xfb, 0x0e,
+	0x00, 0x00, 0xff, 0xff, 0xdc, 0x91, 0xb9, 0xfd, 0xfc, 0x03, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -160,6 +470,9 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MsgClient interface {
 	RegisterRecord(ctx context.Context, in *MsgRegisterRecord, opts ...grpc.CallOption) (*MsgRegisterRecordResponse, error)
+	CreateRecordmap(ctx context.Context, in *MsgCreateRecordmap, opts ...grpc.CallOption) (*MsgCreateRecordmapResponse, error)
+	UpdateRecordmap(ctx context.Context, in *MsgUpdateRecordmap, opts ...grpc.CallOption) (*MsgUpdateRecordmapResponse, error)
+	DeleteRecordmap(ctx context.Context, in *MsgDeleteRecordmap, opts ...grpc.CallOption) (*MsgDeleteRecordmapResponse, error)
 }
 
 type msgClient struct {
@@ -179,9 +492,39 @@ func (c *msgClient) RegisterRecord(ctx context.Context, in *MsgRegisterRecord, o
 	return out, nil
 }
 
+func (c *msgClient) CreateRecordmap(ctx context.Context, in *MsgCreateRecordmap, opts ...grpc.CallOption) (*MsgCreateRecordmapResponse, error) {
+	out := new(MsgCreateRecordmapResponse)
+	err := c.cc.Invoke(ctx, "/cns.registry.Msg/CreateRecordmap", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateRecordmap(ctx context.Context, in *MsgUpdateRecordmap, opts ...grpc.CallOption) (*MsgUpdateRecordmapResponse, error) {
+	out := new(MsgUpdateRecordmapResponse)
+	err := c.cc.Invoke(ctx, "/cns.registry.Msg/UpdateRecordmap", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteRecordmap(ctx context.Context, in *MsgDeleteRecordmap, opts ...grpc.CallOption) (*MsgDeleteRecordmapResponse, error) {
+	out := new(MsgDeleteRecordmapResponse)
+	err := c.cc.Invoke(ctx, "/cns.registry.Msg/DeleteRecordmap", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	RegisterRecord(context.Context, *MsgRegisterRecord) (*MsgRegisterRecordResponse, error)
+	CreateRecordmap(context.Context, *MsgCreateRecordmap) (*MsgCreateRecordmapResponse, error)
+	UpdateRecordmap(context.Context, *MsgUpdateRecordmap) (*MsgUpdateRecordmapResponse, error)
+	DeleteRecordmap(context.Context, *MsgDeleteRecordmap) (*MsgDeleteRecordmapResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -190,6 +533,15 @@ type UnimplementedMsgServer struct {
 
 func (*UnimplementedMsgServer) RegisterRecord(ctx context.Context, req *MsgRegisterRecord) (*MsgRegisterRecordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterRecord not implemented")
+}
+func (*UnimplementedMsgServer) CreateRecordmap(ctx context.Context, req *MsgCreateRecordmap) (*MsgCreateRecordmapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRecordmap not implemented")
+}
+func (*UnimplementedMsgServer) UpdateRecordmap(ctx context.Context, req *MsgUpdateRecordmap) (*MsgUpdateRecordmapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecordmap not implemented")
+}
+func (*UnimplementedMsgServer) DeleteRecordmap(ctx context.Context, req *MsgDeleteRecordmap) (*MsgDeleteRecordmapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecordmap not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -214,6 +566,60 @@ func _Msg_RegisterRecord_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateRecordmap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateRecordmap)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateRecordmap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cns.registry.Msg/CreateRecordmap",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateRecordmap(ctx, req.(*MsgCreateRecordmap))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateRecordmap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateRecordmap)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateRecordmap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cns.registry.Msg/UpdateRecordmap",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateRecordmap(ctx, req.(*MsgUpdateRecordmap))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteRecordmap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteRecordmap)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteRecordmap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cns.registry.Msg/DeleteRecordmap",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteRecordmap(ctx, req.(*MsgDeleteRecordmap))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "cns.registry.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -221,6 +627,18 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterRecord",
 			Handler:    _Msg_RegisterRecord_Handler,
+		},
+		{
+			MethodName: "CreateRecordmap",
+			Handler:    _Msg_CreateRecordmap_Handler,
+		},
+		{
+			MethodName: "UpdateRecordmap",
+			Handler:    _Msg_UpdateRecordmap_Handler,
+		},
+		{
+			MethodName: "DeleteRecordmap",
+			Handler:    _Msg_DeleteRecordmap_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -294,6 +712,214 @@ func (m *MsgRegisterRecordResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgCreateRecordmap) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateRecordmap) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateRecordmap) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Address) > 0 {
+		i -= len(m.Address)
+		copy(dAtA[i:], m.Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Address)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Chain) > 0 {
+		i -= len(m.Chain)
+		copy(dAtA[i:], m.Chain)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Chain)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgCreateRecordmapResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateRecordmapResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateRecordmapResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateRecordmap) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateRecordmap) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateRecordmap) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Address) > 0 {
+		i -= len(m.Address)
+		copy(dAtA[i:], m.Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Address)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Chain) > 0 {
+		i -= len(m.Chain)
+		copy(dAtA[i:], m.Chain)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Chain)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateRecordmapResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateRecordmapResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateRecordmapResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteRecordmap) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteRecordmap) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteRecordmap) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteRecordmapResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteRecordmapResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteRecordmapResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -327,6 +953,100 @@ func (m *MsgRegisterRecord) Size() (n int) {
 }
 
 func (m *MsgRegisterRecordResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgCreateRecordmap) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Chain)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Address)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgCreateRecordmapResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgUpdateRecordmap) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Chain)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Address)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgUpdateRecordmapResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgDeleteRecordmap) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgDeleteRecordmapResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -514,6 +1234,626 @@ func (m *MsgRegisterRecordResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgRegisterRecordResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateRecordmap) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateRecordmap: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateRecordmap: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Chain", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Chain = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Address = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateRecordmapResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateRecordmapResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateRecordmapResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateRecordmap) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateRecordmap: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateRecordmap: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Chain", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Chain = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Address = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateRecordmapResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateRecordmapResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateRecordmapResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteRecordmap) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteRecordmap: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteRecordmap: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteRecordmapResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteRecordmapResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteRecordmapResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

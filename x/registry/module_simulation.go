@@ -28,6 +28,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgRegisterRecord int = 100
 
+	opWeightMsgCreateRecordmap = "op_weight_msg_recordmap"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCreateRecordmap int = 100
+
+	opWeightMsgUpdateRecordmap = "op_weight_msg_recordmap"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgUpdateRecordmap int = 100
+
+	opWeightMsgDeleteRecordmap = "op_weight_msg_recordmap"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgDeleteRecordmap int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -40,6 +52,16 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 	registryGenesis := types.GenesisState{
 		Params: types.DefaultParams(),
 		PortId: types.PortID,
+		RecordmapList: []types.Recordmap{
+			{
+				Creator: sample.AccAddress(),
+				Index:   "0",
+			},
+			{
+				Creator: sample.AccAddress(),
+				Index:   "1",
+			},
+		},
 		// this line is used by starport scaffolding # simapp/module/genesisState
 	}
 	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(&registryGenesis)
@@ -72,6 +94,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgRegisterRecord,
 		registrysimulation.SimulateMsgRegisterRecord(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgCreateRecordmap int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgCreateRecordmap, &weightMsgCreateRecordmap, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateRecordmap = defaultWeightMsgCreateRecordmap
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateRecordmap,
+		registrysimulation.SimulateMsgCreateRecordmap(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgUpdateRecordmap int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdateRecordmap, &weightMsgUpdateRecordmap, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateRecordmap = defaultWeightMsgUpdateRecordmap
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateRecordmap,
+		registrysimulation.SimulateMsgUpdateRecordmap(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgDeleteRecordmap int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgDeleteRecordmap, &weightMsgDeleteRecordmap, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteRecordmap = defaultWeightMsgDeleteRecordmap
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteRecordmap,
+		registrysimulation.SimulateMsgDeleteRecordmap(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

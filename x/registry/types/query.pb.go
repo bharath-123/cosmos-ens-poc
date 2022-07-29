@@ -6,7 +6,7 @@ package types
 import (
 	context "context"
 	fmt "fmt"
-	_ "github.com/cosmos/cosmos-sdk/types/query"
+	query "github.com/cosmos/cosmos-sdk/types/query"
 	_ "github.com/gogo/protobuf/gogoproto"
 	grpc1 "github.com/gogo/protobuf/grpc"
 	proto "github.com/gogo/protobuf/proto"
@@ -113,33 +113,233 @@ func (m *QueryParamsResponse) GetParams() Params {
 	return Params{}
 }
 
+type QueryGetRecordmapRequest struct {
+	Index string `protobuf:"bytes,1,opt,name=index,proto3" json:"index,omitempty"`
+}
+
+func (m *QueryGetRecordmapRequest) Reset()         { *m = QueryGetRecordmapRequest{} }
+func (m *QueryGetRecordmapRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetRecordmapRequest) ProtoMessage()    {}
+func (*QueryGetRecordmapRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33b7babacada5cb6, []int{2}
+}
+func (m *QueryGetRecordmapRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetRecordmapRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetRecordmapRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetRecordmapRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetRecordmapRequest.Merge(m, src)
+}
+func (m *QueryGetRecordmapRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetRecordmapRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetRecordmapRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetRecordmapRequest proto.InternalMessageInfo
+
+func (m *QueryGetRecordmapRequest) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+type QueryGetRecordmapResponse struct {
+	Recordmap Recordmap `protobuf:"bytes,1,opt,name=recordmap,proto3" json:"recordmap"`
+}
+
+func (m *QueryGetRecordmapResponse) Reset()         { *m = QueryGetRecordmapResponse{} }
+func (m *QueryGetRecordmapResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetRecordmapResponse) ProtoMessage()    {}
+func (*QueryGetRecordmapResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33b7babacada5cb6, []int{3}
+}
+func (m *QueryGetRecordmapResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetRecordmapResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetRecordmapResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetRecordmapResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetRecordmapResponse.Merge(m, src)
+}
+func (m *QueryGetRecordmapResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetRecordmapResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetRecordmapResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetRecordmapResponse proto.InternalMessageInfo
+
+func (m *QueryGetRecordmapResponse) GetRecordmap() Recordmap {
+	if m != nil {
+		return m.Recordmap
+	}
+	return Recordmap{}
+}
+
+type QueryAllRecordmapRequest struct {
+	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllRecordmapRequest) Reset()         { *m = QueryAllRecordmapRequest{} }
+func (m *QueryAllRecordmapRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryAllRecordmapRequest) ProtoMessage()    {}
+func (*QueryAllRecordmapRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33b7babacada5cb6, []int{4}
+}
+func (m *QueryAllRecordmapRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllRecordmapRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllRecordmapRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllRecordmapRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllRecordmapRequest.Merge(m, src)
+}
+func (m *QueryAllRecordmapRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllRecordmapRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllRecordmapRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllRecordmapRequest proto.InternalMessageInfo
+
+func (m *QueryAllRecordmapRequest) GetPagination() *query.PageRequest {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
+type QueryAllRecordmapResponse struct {
+	Recordmap  []Recordmap         `protobuf:"bytes,1,rep,name=recordmap,proto3" json:"recordmap"`
+	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllRecordmapResponse) Reset()         { *m = QueryAllRecordmapResponse{} }
+func (m *QueryAllRecordmapResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryAllRecordmapResponse) ProtoMessage()    {}
+func (*QueryAllRecordmapResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_33b7babacada5cb6, []int{5}
+}
+func (m *QueryAllRecordmapResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllRecordmapResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllRecordmapResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllRecordmapResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllRecordmapResponse.Merge(m, src)
+}
+func (m *QueryAllRecordmapResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllRecordmapResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllRecordmapResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllRecordmapResponse proto.InternalMessageInfo
+
+func (m *QueryAllRecordmapResponse) GetRecordmap() []Recordmap {
+	if m != nil {
+		return m.Recordmap
+	}
+	return nil
+}
+
+func (m *QueryAllRecordmapResponse) GetPagination() *query.PageResponse {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "cns.registry.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "cns.registry.QueryParamsResponse")
+	proto.RegisterType((*QueryGetRecordmapRequest)(nil), "cns.registry.QueryGetRecordmapRequest")
+	proto.RegisterType((*QueryGetRecordmapResponse)(nil), "cns.registry.QueryGetRecordmapResponse")
+	proto.RegisterType((*QueryAllRecordmapRequest)(nil), "cns.registry.QueryAllRecordmapRequest")
+	proto.RegisterType((*QueryAllRecordmapResponse)(nil), "cns.registry.QueryAllRecordmapResponse")
 }
 
 func init() { proto.RegisterFile("registry/query.proto", fileDescriptor_33b7babacada5cb6) }
 
 var fileDescriptor_33b7babacada5cb6 = []byte{
-	// 279 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x90, 0xbd, 0x4e, 0xc3, 0x30,
-	0x14, 0x85, 0x13, 0x04, 0x19, 0x0c, 0x93, 0x31, 0x08, 0x45, 0x95, 0x29, 0x99, 0x10, 0x43, 0xac,
-	0x86, 0x37, 0xe8, 0xc6, 0x06, 0x1d, 0xd9, 0x9c, 0xc8, 0xb2, 0x22, 0xa8, 0xaf, 0x9b, 0xeb, 0x22,
-	0xb2, 0xf2, 0x04, 0x48, 0xbc, 0x54, 0xc7, 0x4a, 0x2c, 0x4c, 0x08, 0x25, 0x3c, 0x08, 0x4a, 0x1c,
-	0x7e, 0x0a, 0x12, 0x9b, 0x75, 0xcf, 0x77, 0x8e, 0xef, 0xb9, 0x84, 0x55, 0x4a, 0x97, 0xe8, 0xaa,
-	0x5a, 0x2c, 0x96, 0xaa, 0xaa, 0x53, 0x5b, 0x81, 0x03, 0xba, 0x57, 0x18, 0x4c, 0x3f, 0x95, 0x98,
-	0x69, 0xd0, 0xd0, 0x0b, 0xa2, 0x7b, 0x79, 0x26, 0x1e, 0x69, 0x00, 0x7d, 0xab, 0x84, 0xb4, 0xa5,
-	0x90, 0xc6, 0x80, 0x93, 0xae, 0x04, 0x83, 0x83, 0x7a, 0x56, 0x00, 0xce, 0x01, 0x45, 0x2e, 0x51,
-	0xf9, 0x68, 0x71, 0x37, 0xc9, 0x95, 0x93, 0x13, 0x61, 0xa5, 0x2e, 0x4d, 0x0f, 0x0f, 0xec, 0xc1,
-	0xd7, 0x0e, 0x56, 0x56, 0x72, 0x3e, 0x44, 0x24, 0x8c, 0xd0, 0xab, 0xce, 0x78, 0xd9, 0x0f, 0x67,
-	0x6a, 0xb1, 0x54, 0xe8, 0x92, 0x0b, 0xb2, 0xbf, 0x31, 0x45, 0x0b, 0x06, 0x15, 0xcd, 0x48, 0xe4,
-	0xcd, 0x47, 0xe1, 0x38, 0x3c, 0xdd, 0xcd, 0x58, 0xfa, 0xb3, 0x42, 0xea, 0xe9, 0xe9, 0xf6, 0xea,
-	0xf5, 0x38, 0x98, 0x0d, 0x64, 0xe6, 0xc8, 0x4e, 0x1f, 0x45, 0x6f, 0x48, 0xe4, 0x01, 0x3a, 0xde,
-	0xb4, 0xfd, 0xfd, 0x3f, 0x3e, 0xf9, 0x87, 0xf0, 0xbb, 0x24, 0xa3, 0x87, 0xe7, 0xf7, 0xa7, 0xad,
-	0x43, 0xca, 0x44, 0x61, 0x50, 0xfc, 0x2a, 0x37, 0x4d, 0x57, 0x0d, 0x0f, 0xd7, 0x0d, 0x0f, 0xdf,
-	0x1a, 0x1e, 0x3e, 0xb6, 0x3c, 0x58, 0xb7, 0x3c, 0x78, 0x69, 0x79, 0x70, 0xcd, 0x3a, 0xfc, 0xfe,
-	0xdb, 0xe0, 0x6a, 0xab, 0x30, 0x8f, 0xfa, 0x6b, 0x9c, 0x7f, 0x04, 0x00, 0x00, 0xff, 0xff, 0x87,
-	0x79, 0x33, 0xb5, 0xaa, 0x01, 0x00, 0x00,
+	// 475 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x93, 0x41, 0x6f, 0xd3, 0x30,
+	0x14, 0xc7, 0xe3, 0xc2, 0x2a, 0xd5, 0xec, 0x64, 0x02, 0xeb, 0xa2, 0x29, 0xdd, 0x7c, 0x58, 0x11,
+	0x07, 0x9b, 0x95, 0x23, 0xa7, 0xed, 0xc0, 0xc4, 0x6d, 0xe4, 0x84, 0xb8, 0x39, 0x99, 0x15, 0x45,
+	0xa4, 0x76, 0x16, 0x7b, 0x68, 0x15, 0x42, 0x42, 0x48, 0xdc, 0x91, 0xf8, 0x04, 0x7c, 0x9b, 0x1d,
+	0x27, 0x71, 0xe1, 0x84, 0x50, 0xcb, 0xf7, 0x00, 0xc5, 0x76, 0xd3, 0x86, 0x19, 0xa6, 0xdd, 0x5a,
+	0xbf, 0xff, 0xfb, 0xff, 0x7f, 0x7e, 0x7e, 0x81, 0x61, 0xcd, 0xf3, 0x42, 0xe9, 0x7a, 0x46, 0xcf,
+	0xce, 0x79, 0x3d, 0x23, 0x55, 0x2d, 0xb5, 0x44, 0x9b, 0x99, 0x50, 0x64, 0x59, 0x89, 0xc2, 0x5c,
+	0xe6, 0xd2, 0x14, 0x68, 0xf3, 0xcb, 0x6a, 0xa2, 0x9d, 0x5c, 0xca, 0xbc, 0xe4, 0x94, 0x55, 0x05,
+	0x65, 0x42, 0x48, 0xcd, 0x74, 0x21, 0x85, 0x72, 0xd5, 0xc7, 0x99, 0x54, 0x53, 0xa9, 0x68, 0xca,
+	0x14, 0xb7, 0xd6, 0xf4, 0xed, 0x41, 0xca, 0x35, 0x3b, 0xa0, 0x15, 0xcb, 0x0b, 0x61, 0xc4, 0x4e,
+	0xfb, 0xa0, 0x65, 0xa8, 0x58, 0xcd, 0xa6, 0x4b, 0x8b, 0x61, 0x7b, 0x5c, 0xf3, 0x4c, 0xd6, 0xa7,
+	0x53, 0x56, 0xd9, 0x0a, 0x0e, 0x21, 0x7a, 0xd9, 0x58, 0x9e, 0x18, 0x79, 0xc2, 0xcf, 0xce, 0xb9,
+	0xd2, 0xf8, 0x05, 0xbc, 0xdf, 0x39, 0x55, 0x95, 0x14, 0x8a, 0xa3, 0x09, 0xec, 0x5b, 0xdb, 0x21,
+	0xd8, 0x05, 0x8f, 0xee, 0x4d, 0x42, 0xb2, 0x7e, 0x39, 0x62, 0xd5, 0x47, 0x77, 0x2f, 0x7f, 0x8c,
+	0x82, 0xc4, 0x29, 0xf1, 0x13, 0x38, 0x34, 0x56, 0xc7, 0x5c, 0x27, 0xcb, 0x6c, 0x17, 0x83, 0x42,
+	0xb8, 0x51, 0x88, 0x53, 0x7e, 0x61, 0xec, 0x06, 0x89, 0xfd, 0x83, 0x5f, 0xc1, 0x6d, 0x4f, 0x87,
+	0x43, 0x78, 0x06, 0x07, 0xed, 0x15, 0x1c, 0xc5, 0x56, 0x97, 0xa2, 0xed, 0x71, 0x20, 0x2b, 0x3d,
+	0x4e, 0x1d, 0xcb, 0x61, 0x59, 0x5e, 0x63, 0x79, 0x0e, 0xe1, 0x6a, 0x9a, 0xce, 0x79, 0x9f, 0xd8,
+	0xd1, 0x93, 0x66, 0xf4, 0xc4, 0xbe, 0xaa, 0x1b, 0x3d, 0x39, 0x61, 0x39, 0x77, 0xbd, 0xc9, 0x5a,
+	0x27, 0xfe, 0x0a, 0x1c, 0x7e, 0x37, 0xc4, 0x8f, 0x7f, 0xe7, 0x36, 0xf8, 0xe8, 0xb8, 0x83, 0xd8,
+	0x33, 0x88, 0xe3, 0x1b, 0x11, 0x6d, 0xf2, 0x3a, 0xe3, 0xe4, 0x77, 0x0f, 0x6e, 0x18, 0x46, 0xf4,
+	0x06, 0xf6, 0xed, 0xab, 0xa1, 0xdd, 0x2e, 0xc6, 0xf5, 0xa5, 0x88, 0xf6, 0xfe, 0xa3, 0xb0, 0x21,
+	0x78, 0xe7, 0xe3, 0xb7, 0x5f, 0x5f, 0x7a, 0x0f, 0x51, 0x48, 0x33, 0xa1, 0xe8, 0x5f, 0xbb, 0x88,
+	0x3e, 0x01, 0x38, 0x68, 0xaf, 0x87, 0xf6, 0x3d, 0x76, 0x9e, 0x25, 0x89, 0xc6, 0x37, 0xea, 0x5c,
+	0xf8, 0xd8, 0x84, 0xef, 0xa1, 0x51, 0x37, 0xbc, 0x9d, 0x1f, 0x7d, 0x67, 0xf6, 0xeb, 0x3d, 0xfa,
+	0x00, 0xe0, 0x66, 0xdb, 0x7e, 0x58, 0x96, 0x5e, 0x14, 0xcf, 0x8e, 0x78, 0x51, 0x7c, 0xcf, 0x8c,
+	0x47, 0x06, 0x65, 0x1b, 0x6d, 0xfd, 0x03, 0xe5, 0x88, 0x5c, 0xce, 0x63, 0x70, 0x35, 0x8f, 0xc1,
+	0xcf, 0x79, 0x0c, 0x3e, 0x2f, 0xe2, 0xe0, 0x6a, 0x11, 0x07, 0xdf, 0x17, 0x71, 0xf0, 0x3a, 0x6c,
+	0x3a, 0x2e, 0x56, 0x3d, 0x7a, 0x56, 0x71, 0x95, 0xf6, 0xcd, 0xd7, 0xfa, 0xf4, 0x4f, 0x00, 0x00,
+	0x00, 0xff, 0xff, 0x2e, 0x24, 0x9d, 0xc5, 0x64, 0x04, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -156,6 +356,10 @@ const _ = grpc.SupportPackageIsVersion4
 type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	// Queries a Recordmap by index.
+	Recordmap(ctx context.Context, in *QueryGetRecordmapRequest, opts ...grpc.CallOption) (*QueryGetRecordmapResponse, error)
+	// Queries a list of Recordmap items.
+	RecordmapAll(ctx context.Context, in *QueryAllRecordmapRequest, opts ...grpc.CallOption) (*QueryAllRecordmapResponse, error)
 }
 
 type queryClient struct {
@@ -175,10 +379,32 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
+func (c *queryClient) Recordmap(ctx context.Context, in *QueryGetRecordmapRequest, opts ...grpc.CallOption) (*QueryGetRecordmapResponse, error) {
+	out := new(QueryGetRecordmapResponse)
+	err := c.cc.Invoke(ctx, "/cns.registry.Query/Recordmap", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) RecordmapAll(ctx context.Context, in *QueryAllRecordmapRequest, opts ...grpc.CallOption) (*QueryAllRecordmapResponse, error) {
+	out := new(QueryAllRecordmapResponse)
+	err := c.cc.Invoke(ctx, "/cns.registry.Query/RecordmapAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	// Queries a Recordmap by index.
+	Recordmap(context.Context, *QueryGetRecordmapRequest) (*QueryGetRecordmapResponse, error)
+	// Queries a list of Recordmap items.
+	RecordmapAll(context.Context, *QueryAllRecordmapRequest) (*QueryAllRecordmapResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -187,6 +413,12 @@ type UnimplementedQueryServer struct {
 
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (*UnimplementedQueryServer) Recordmap(ctx context.Context, req *QueryGetRecordmapRequest) (*QueryGetRecordmapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Recordmap not implemented")
+}
+func (*UnimplementedQueryServer) RecordmapAll(ctx context.Context, req *QueryAllRecordmapRequest) (*QueryAllRecordmapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RecordmapAll not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -211,6 +443,42 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_Recordmap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetRecordmapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Recordmap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cns.registry.Query/Recordmap",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Recordmap(ctx, req.(*QueryGetRecordmapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_RecordmapAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllRecordmapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).RecordmapAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cns.registry.Query/RecordmapAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).RecordmapAll(ctx, req.(*QueryAllRecordmapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "cns.registry.Query",
 	HandlerType: (*QueryServer)(nil),
@@ -218,6 +486,14 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
+		},
+		{
+			MethodName: "Recordmap",
+			Handler:    _Query_Recordmap_Handler,
+		},
+		{
+			MethodName: "RecordmapAll",
+			Handler:    _Query_RecordmapAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -280,6 +556,153 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryGetRecordmapRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetRecordmapRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetRecordmapRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetRecordmapResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetRecordmapResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetRecordmapResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Recordmap.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintQuery(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllRecordmapRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllRecordmapRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllRecordmapRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllRecordmapResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllRecordmapResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllRecordmapResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Recordmap) > 0 {
+		for iNdEx := len(m.Recordmap) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Recordmap[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -308,6 +731,62 @@ func (m *QueryParamsResponse) Size() (n int) {
 	_ = l
 	l = m.Params.Size()
 	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryGetRecordmapRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryGetRecordmapResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.Recordmap.Size()
+	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryAllRecordmapRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryAllRecordmapResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Recordmap) > 0 {
+		for _, e := range m.Recordmap {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
 	return n
 }
 
@@ -426,6 +905,377 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if err := m.Params.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetRecordmapRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetRecordmapRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetRecordmapRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetRecordmapResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetRecordmapResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetRecordmapResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Recordmap", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Recordmap.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllRecordmapRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllRecordmapRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllRecordmapRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageRequest{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllRecordmapResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllRecordmapResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllRecordmapResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Recordmap", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Recordmap = append(m.Recordmap, Recordmap{})
+			if err := m.Recordmap[len(m.Recordmap)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageResponse{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

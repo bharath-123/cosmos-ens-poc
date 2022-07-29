@@ -5,10 +5,16 @@ import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
 import { MsgRegisterRecord } from "./types/registry/tx";
+import { MsgUpdateRecordmap } from "./types/registry/tx";
+import { MsgCreateRecordmap } from "./types/registry/tx";
+import { MsgDeleteRecordmap } from "./types/registry/tx";
 
 
 const types = [
   ["/cns.registry.MsgRegisterRecord", MsgRegisterRecord],
+  ["/cns.registry.MsgUpdateRecordmap", MsgUpdateRecordmap],
+  ["/cns.registry.MsgCreateRecordmap", MsgCreateRecordmap],
+  ["/cns.registry.MsgDeleteRecordmap", MsgDeleteRecordmap],
   
 ];
 export const MissingWalletError = new Error("wallet is required");
@@ -42,6 +48,9 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
     msgRegisterRecord: (data: MsgRegisterRecord): EncodeObject => ({ typeUrl: "/cns.registry.MsgRegisterRecord", value: MsgRegisterRecord.fromPartial( data ) }),
+    msgUpdateRecordmap: (data: MsgUpdateRecordmap): EncodeObject => ({ typeUrl: "/cns.registry.MsgUpdateRecordmap", value: MsgUpdateRecordmap.fromPartial( data ) }),
+    msgCreateRecordmap: (data: MsgCreateRecordmap): EncodeObject => ({ typeUrl: "/cns.registry.MsgCreateRecordmap", value: MsgCreateRecordmap.fromPartial( data ) }),
+    msgDeleteRecordmap: (data: MsgDeleteRecordmap): EncodeObject => ({ typeUrl: "/cns.registry.MsgDeleteRecordmap", value: MsgDeleteRecordmap.fromPartial( data ) }),
     
   };
 };

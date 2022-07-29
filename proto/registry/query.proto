@@ -5,6 +5,7 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "registry/params.proto";
+import "registry/recordmap.proto";
 // this line is used by starport scaffolding # 1
 
 option go_package = "cns/x/registry/types";
@@ -15,7 +16,17 @@ service Query {
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/cns/registry/params";
   }
-  // this line is used by starport scaffolding # 2
+  // Queries a Recordmap by index.
+	rpc Recordmap(QueryGetRecordmapRequest) returns (QueryGetRecordmapResponse) {
+		option (google.api.http).get = "/cns/registry/recordmap/{index}";
+	}
+
+	// Queries a list of Recordmap items.
+	rpc RecordmapAll(QueryAllRecordmapRequest) returns (QueryAllRecordmapResponse) {
+		option (google.api.http).get = "/cns/registry/recordmap";
+	}
+
+// this line is used by starport scaffolding # 2
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -25,6 +36,24 @@ message QueryParamsRequest {}
 message QueryParamsResponse {
   // params holds all the parameters of this module.
   Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetRecordmapRequest {
+	  string index = 1;
+
+}
+
+message QueryGetRecordmapResponse {
+	Recordmap recordmap = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllRecordmapRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllRecordmapResponse {
+	repeated Recordmap recordmap = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 
 // this line is used by starport scaffolding # 3

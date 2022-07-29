@@ -3,6 +3,7 @@ package cns.registry;
 
 import "gogoproto/gogo.proto";
 import "registry/params.proto";
+import "registry/recordmap.proto";
 // this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "cns/x/registry/types";
@@ -11,5 +12,6 @@ option go_package = "cns/x/registry/types";
 message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
   string port_id = 2;
+  repeated Recordmap recordmapList = 3 [(gogoproto.nullable) = false];
   // this line is used by starport scaffolding # genesis/proto/state
 }

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package cns.registry;
+
+option go_package = "cns/x/registry/types";
+
+message Recordmap {
+  string index = 1; 
+  string chain = 2; 
+  string address = 3; 
+  string creator = 4;
+}
+
