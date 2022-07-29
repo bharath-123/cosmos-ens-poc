@@ -11,6 +11,13 @@ func (k msgServer) RegisterRecord(goCtx context.Context, msg *types.MsgRegisterR
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
 	// TODO: Handling the message
+	k.CreateRecordmap(goCtx, &types.MsgCreateRecordmap{
+		Creator: msg.GetCreator(),
+		Index:   msg.GetCreator(),
+		Chain:   msg.GetChain(),
+		Address: msg.GetAddress(),
+	})
+
 	_ = ctx
 
 	return &types.MsgRegisterRecordResponse{}, nil
