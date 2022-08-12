@@ -19,6 +19,8 @@ export type RegistryMsgDeleteRecordmapResponse = object;
 
 export type RegistryMsgRegisterRecordResponse = object;
 
+export type RegistryMsgSendRecordBroadcastResponse = object;
+
 export type RegistryMsgUpdateRecordmapResponse = object;
 
 /**

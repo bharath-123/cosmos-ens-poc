@@ -12,6 +12,7 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgCreateRecordmap{}, "registry/CreateRecordmap", nil)
 	cdc.RegisterConcrete(&MsgUpdateRecordmap{}, "registry/UpdateRecordmap", nil)
 	cdc.RegisterConcrete(&MsgDeleteRecordmap{}, "registry/DeleteRecordmap", nil)
+	cdc.RegisterConcrete(&MsgSendRecordBroadcast{}, "registry/SendRecordBroadcast", nil)
 	// this line is used by starport scaffolding # 2
 }
 
@@ -23,6 +24,9 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 		&MsgCreateRecordmap{},
 		&MsgUpdateRecordmap{},
 		&MsgDeleteRecordmap{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgSendRecordBroadcast{},
 	)
 	// this line is used by starport scaffolding # 3
 

@@ -43,6 +43,14 @@ curl https://get.ignite.com/username/cns@latest! | sudo bash
 ```
 `username/cns` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
 
+### To connect with ts-relayer
+
+```
+ibc-setup connect
+ibc-setup channel --src-port registry --src-connection connection-5 --dest-connection connection-33 --dest-port wasm.terra16lmrsvkc4xf28e8a9dz5lmxaayn78hj5ugr7zhxmrk7cmxxa9t9s7cmtvu --version "registry-1"
+```
+
+
 ## Learn more
 
 - [Ignite CLI](https://ignite.com/cli)

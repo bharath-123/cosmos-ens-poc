@@ -9,10 +9,22 @@ message RegistryPacketData {
     oneof packet {
         NoData noData = 1;
         // this line is used by starport scaffolding # ibc/packet/proto/field
+				RecordBroadcastPacketData recordBroadcastPacket = 2; // this line is used by starport scaffolding # ibc/packet/proto/field/number
     }
 }
 
 message NoData {
 }
 
+// RecordBroadcastPacketData defines a struct for the packet payload
+message RecordBroadcastPacketData {
+  string userAddress = 1;
+  string chain = 2;
+  string chainAddress = 3;
+}
+
+// RecordBroadcastPacketAck defines a struct for the packet acknowledgment
+message RecordBroadcastPacketAck {
+	  string address = 1;
+}
 // this line is used by starport scaffolding # ibc/packet/proto/message

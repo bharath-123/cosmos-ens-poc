@@ -12,6 +12,7 @@ service Msg {
   rpc CreateRecordmap(MsgCreateRecordmap) returns (MsgCreateRecordmapResponse);
   rpc UpdateRecordmap(MsgUpdateRecordmap) returns (MsgUpdateRecordmapResponse);
   rpc DeleteRecordmap(MsgDeleteRecordmap) returns (MsgDeleteRecordmapResponse);
+  rpc SendRecordBroadcast(MsgSendRecordBroadcast) returns (MsgSendRecordBroadcastResponse);
 // this line is used by starport scaffolding # proto/tx/rpc
 }
 
@@ -48,4 +49,16 @@ message MsgDeleteRecordmap {
 }
 message MsgDeleteRecordmapResponse {}
 
+message MsgSendRecordBroadcast {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  string userAddress = 5;
+  string chain = 6;
+  string chainAddress = 7;
+}
+
+message MsgSendRecordBroadcastResponse {
+}
 // this line is used by starport scaffolding # proto/tx/message

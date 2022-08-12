@@ -1,5 +1,6 @@
 /* eslint-disable */
-import { Reader, Writer } from "protobufjs/minimal";
+import { Reader, util, configure, Writer } from "protobufjs/minimal";
+import * as Long from "long";
 
 export const protobufPackage = "cns.registry";
 
@@ -35,6 +36,18 @@ export interface MsgDeleteRecordmap {
 }
 
 export interface MsgDeleteRecordmapResponse {}
+
+export interface MsgSendRecordBroadcast {
+  creator: string;
+  port: string;
+  channelID: string;
+  timeoutTimestamp: number;
+  userAddress: string;
+  chain: string;
+  chainAddress: string;
+}
+
+export interface MsgSendRecordBroadcastResponse {}
 
 const baseMsgRegisterRecord: object = { creator: "", chain: "", address: "" };
 
@@ -636,6 +649,237 @@ export const MsgDeleteRecordmapResponse = {
   },
 };
 
+const baseMsgSendRecordBroadcast: object = {
+  creator: "",
+  port: "",
+  channelID: "",
+  timeoutTimestamp: 0,
+  userAddress: "",
+  chain: "",
+  chainAddress: "",
+};
+
+export const MsgSendRecordBroadcast = {
+  encode(
+    message: MsgSendRecordBroadcast,
+    writer: Writer = Writer.create()
+  ): Writer {
+    if (message.creator !== "") {
+      writer.uint32(10).string(message.creator);
+    }
+    if (message.port !== "") {
+      writer.uint32(18).string(message.port);
+    }
+    if (message.channelID !== "") {
+      writer.uint32(26).string(message.channelID);
+    }
+    if (message.timeoutTimestamp !== 0) {
+      writer.uint32(32).uint64(message.timeoutTimestamp);
+    }
+    if (message.userAddress !== "") {
+      writer.uint32(42).string(message.userAddress);
+    }
+    if (message.chain !== "") {
+      writer.uint32(50).string(message.chain);
+    }
+    if (message.chainAddress !== "") {
+      writer.uint32(58).string(message.chainAddress);
+    }
+    return writer;
+  },
+
+  decode(input: Reader | Uint8Array, length?: number): MsgSendRecordBroadcast {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = { ...baseMsgSendRecordBroadcast } as MsgSendRecordBroadcast;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.creator = reader.string();
+          break;
+        case 2:
+          message.port = reader.string();
+          break;
+        case 3:
+          message.channelID = reader.string();
+          break;
+        case 4:
+          message.timeoutTimestamp = longToNumber(reader.uint64() as Long);
+          break;
+        case 5:
+          message.userAddress = reader.string();
+          break;
+        case 6:
+          message.chain = reader.string();
+          break;
+        case 7:
+          message.chainAddress = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+
+  fromJSON(object: any): MsgSendRecordBroadcast {
+    const message = { ...baseMsgSendRecordBroadcast } as MsgSendRecordBroadcast;
+    if (object.creator !== undefined && object.creator !== null) {
+      message.creator = String(object.creator);
+    } else {
+      message.creator = "";
+    }
+    if (object.port !== undefined && object.port !== null) {
+      message.port = String(object.port);
+    } else {
+      message.port = "";
+    }
+    if (object.channelID !== undefined && object.channelID !== null) {
+      message.channelID = String(object.channelID);
+    } else {
+      message.channelID = "";
+    }
+    if (
+      object.timeoutTimestamp !== undefined &&
+      object.timeoutTimestamp !== null
+    ) {
+      message.timeoutTimestamp = Number(object.timeoutTimestamp);
+    } else {
+      message.timeoutTimestamp = 0;
+    }
+    if (object.userAddress !== undefined && object.userAddress !== null) {
+      message.userAddress = String(object.userAddress);
+    } else {
+      message.userAddress = "";
+    }
+    if (object.chain !== undefined && object.chain !== null) {
+      message.chain = String(object.chain);
+    } else {
+      message.chain = "";
+    }
+    if (object.chainAddress !== undefined && object.chainAddress !== null) {
+      message.chainAddress = String(object.chainAddress);
+    } else {
+      message.chainAddress = "";
+    }
+    return message;
+  },
+
+  toJSON(message: MsgSendRecordBroadcast): unknown {
+    const obj: any = {};
+    message.creator !== undefined && (obj.creator = message.creator);
+    message.port !== undefined && (obj.port = message.port);
+    message.channelID !== undefined && (obj.channelID = message.channelID);
+    message.timeoutTimestamp !== undefined &&
+      (obj.timeoutTimestamp = message.timeoutTimestamp);
+    message.userAddress !== undefined &&
+      (obj.userAddress = message.userAddress);
+    message.chain !== undefined && (obj.chain = message.chain);
+    message.chainAddress !== undefined &&
+      (obj.chainAddress = message.chainAddress);
+    return obj;
+  },
+
+  fromPartial(
+    object: DeepPartial<MsgSendRecordBroadcast>
+  ): MsgSendRecordBroadcast {
+    const message = { ...baseMsgSendRecordBroadcast } as MsgSendRecordBroadcast;
+    if (object.creator !== undefined && object.creator !== null) {
+      message.creator = object.creator;
+    } else {
+      message.creator = "";
+    }
+    if (object.port !== undefined && object.port !== null) {
+      message.port = object.port;
+    } else {
+      message.port = "";
+    }
+    if (object.channelID !== undefined && object.channelID !== null) {
+      message.channelID = object.channelID;
+    } else {
+      message.channelID = "";
+    }
+    if (
+      object.timeoutTimestamp !== undefined &&
+      object.timeoutTimestamp !== null
+    ) {
+      message.timeoutTimestamp = object.timeoutTimestamp;
+    } else {
+      message.timeoutTimestamp = 0;
+    }
+    if (object.userAddress !== undefined && object.userAddress !== null) {
+      message.userAddress = object.userAddress;
+    } else {
+      message.userAddress = "";
+    }
+    if (object.chain !== undefined && object.chain !== null) {
+      message.chain = object.chain;
+    } else {
+      message.chain = "";
+    }
+    if (object.chainAddress !== undefined && object.chainAddress !== null) {
+      message.chainAddress = object.chainAddress;
+    } else {
+      message.chainAddress = "";
+    }
+    return message;
+  },
+};
+
+const baseMsgSendRecordBroadcastResponse: object = {};
+
+export const MsgSendRecordBroadcastResponse = {
+  encode(
+    _: MsgSendRecordBroadcastResponse,
+    writer: Writer = Writer.create()
+  ): Writer {
+    return writer;
+  },
+
+  decode(
+    input: Reader | Uint8Array,
+    length?: number
+  ): MsgSendRecordBroadcastResponse {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseMsgSendRecordBroadcastResponse,
+    } as MsgSendRecordBroadcastResponse;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+
+  fromJSON(_: any): MsgSendRecordBroadcastResponse {
+    const message = {
+      ...baseMsgSendRecordBroadcastResponse,
+    } as MsgSendRecordBroadcastResponse;
+    return message;
+  },
+
+  toJSON(_: MsgSendRecordBroadcastResponse): unknown {
+    const obj: any = {};
+    return obj;
+  },
+
+  fromPartial(
+    _: DeepPartial<MsgSendRecordBroadcastResponse>
+  ): MsgSendRecordBroadcastResponse {
+    const message = {
+      ...baseMsgSendRecordBroadcastResponse,
+    } as MsgSendRecordBroadcastResponse;
+    return message;
+  },
+};
+
 /** Msg defines the Msg service. */
 export interface Msg {
   RegisterRecord(
@@ -647,10 +891,13 @@ export interface Msg {
   UpdateRecordmap(
     request: MsgUpdateRecordmap
   ): Promise<MsgUpdateRecordmapResponse>;
-  /** this line is used by starport scaffolding # proto/tx/rpc */
   DeleteRecordmap(
     request: MsgDeleteRecordmap
   ): Promise<MsgDeleteRecordmapResponse>;
+  /** this line is used by starport scaffolding # proto/tx/rpc */
+  SendRecordBroadcast(
+    request: MsgSendRecordBroadcast
+  ): Promise<MsgSendRecordBroadcastResponse>;
 }
 
 export class MsgClientImpl implements Msg {
@@ -713,6 +960,20 @@ export class MsgClientImpl implements Msg {
       MsgDeleteRecordmapResponse.decode(new Reader(data))
     );
   }
+
+  SendRecordBroadcast(
+    request: MsgSendRecordBroadcast
+  ): Promise<MsgSendRecordBroadcastResponse> {
+    const data = MsgSendRecordBroadcast.encode(request).finish();
+    const promise = this.rpc.request(
+      "cns.registry.Msg",
+      "SendRecordBroadcast",
+      data
+    );
+    return promise.then((data) =>
+      MsgSendRecordBroadcastResponse.decode(new Reader(data))
+    );
+  }
 }
 
 interface Rpc {
@@ -722,6 +983,16 @@ interface Rpc {
     data: Uint8Array
   ): Promise<Uint8Array>;
 }
+
+declare var self: any | undefined;
+declare var window: any | undefined;
+var globalThis: any = (() => {
+  if (typeof globalThis !== "undefined") return globalThis;
+  if (typeof self !== "undefined") return self;
+  if (typeof window !== "undefined") return window;
+  if (typeof global !== "undefined") return global;
+  throw "Unable to locate global object";
+})();
 
 type Builtin = Date | Function | Uint8Array | string | number | undefined;
 export type DeepPartial<T> = T extends Builtin
@@ -733,3 +1004,15 @@ export type DeepPartial<T> = T extends Builtin
   : T extends {}
   ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
+
+function longToNumber(long: Long): number {
+  if (long.gt(Number.MAX_SAFE_INTEGER)) {
+    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+  }
+  return long.toNumber();
+}
+
+if (util.Long !== Long) {
+  util.Long = Long as any;
+  configure();
+}
