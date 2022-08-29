@@ -1,4 +1,7 @@
 # cns
+
+tech documentation: https://miro.com/app/board/uXjVOSLJGYA=/?share_link_id=904147243266
+
 **cns** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
 
 ## Get started
